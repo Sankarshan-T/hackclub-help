@@ -1,0 +1,117 @@
+:root {
+    --bg-dark: #020617;
+    --bg-gradient: linear-gradient(135deg, #2a0f16 0%, #020617 100%);
+    --bg-blue-black: #0f172a;
+    --hc-red: #ec3750;
+    --ui-black: #000000;
+    --text-muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    background: var(--hc-red);
+    padding: 10px 20px;
+    font-weight: 800;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 15px rgba(236, 55, 80, 0.4);
+    z-index: 10;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--ui-black);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px; 
+    padding: 3rem;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(236, 55, 80, 0.1);
+    color: var(--hc-red);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+}
+
+p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background: var(--hc-red);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 99px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 28px;
+    border-radius: 99px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: #ff475d;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    .actions { flex-direction: column; }
+}
