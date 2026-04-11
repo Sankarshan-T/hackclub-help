@@ -1,10 +1,11 @@
 :root {
-    --bg-dark: #020617;
-    --bg-gradient: linear-gradient(135deg, #2a0f16 0%, #020617 100%);
-    --bg-blue-black: #0f172a;
-    --hc-red: #ec3750;
-    --ui-black: #000000;
-    --text-muted: #94a3b8;
+    --bg-dark: #f8fafc;
+    --bg-gradient: linear-gradient(135deg, #ffe4e6 0%, #fff5f6 50%, #f8fafc 100%);
+    --bg-blue-black: #f1f5f9;
+    --hc-red: #d7263d;
+    --ui-black: #ffffff;
+    --text-muted: #8b6473;
+    --text-body: #24141f;
 }
 
 * {
@@ -16,7 +17,7 @@
 
 body {
     background: var(--bg-gradient);
-    color: white;
+    color: var(--text-body);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -29,6 +30,7 @@ body {
     top: 0;
     left: 10%;
     background: var(--hc-red);
+    color: var(--ui-black);
     padding: 10px 20px;
     font-weight: 800;
     border-radius: 0 0 12px 12px;
@@ -85,7 +87,7 @@ p {
 
 .btn-primary {
     background: var(--hc-red);
-    color: white;
+    color: var(--ui-black);
     border: none;
     padding: 12px 28px;
     border-radius: 99px;
@@ -97,7 +99,7 @@ p {
 
 .btn-secondary {
     background: transparent;
-    color: white;
+    color: var(--ui-black);
     border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 12px 28px;
     border-radius: 99px;
