@@ -51,7 +51,7 @@ a:hover {
 
 .navbar {
     background-color: rgba(249, 250, 252, 0.85);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--hc-smoke);
     position: sticky;
