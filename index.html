@@ -1,80 +1,201 @@
+<!-- This website is still WIP! -->
+<!-- All the content in this website is from the get support canvas (COMING SOON 👀👀) -->
+<!-- the channel ids are placeholders for now cuz im too lazy to put em up, i'll do it later -->
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help! | Hackclub</title>
+    <title>Help | Hack Club</title>
+    <meta name="description" content="A place where you can get answers to your questions about Hack Club.">
+    <link rel="icon" type="image/svg+xml" href="https://assets.hackclub.com/icon-rounded.svg">
+    <link rel="stylesheet" href="https://css.hackclub.com/theme.css">
+    <!-- ik the below is for HQ sites only, but this is basically a help site for HC so i suppose i can use -->
+    <link rel="stylesheet" href="https://css.hackclub.com/fonts.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <section style="
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    ">
-        <div class="banner">HELP</div>
-        <main class="container">
-            <div class="card">
-                <div class="badge">HELP!</div>
-                <h1 class="hero-h1">HackClub help.</h1>
-                <p class="hero-p">A place where you can get answers to your questions about hackclub</p>
+    <a href="https://hackclub.com/" class="hc-flag-link">
+        <img class="hc-flag" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/>
+    </a>
 
-                <div class="actions">
-                    <a href="#FAQ" class="btn-primary" onclick=window.location.href=#FAQ>See the info 👇</a>
+    <!-- Navbar - I still need to add stuff here -->
+    <nav class="navbar">
+        <div class="nav-container container wide">
+            <div class="nav-links">
+                <!-- navbar things need to added here -->
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero container wide">
+            <div class="hero-content">
+            <div class="hero-badge pill">Get support!</div>
+            <h1 class="hero-title title">Welcome to Hack Club support!</h1>
+            <p class="hero-subtitle lead">You'll find common ways to get help for everything on Hack Club.</p>
+                <div class="hero-actions">
+                    <a href="#events" class="btn btn-primary">Find help 👇</a>
                 </div>
             </div>
-        </main>
-    </section>
-    <section style="
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    " id="FAQ">
-        <main class="grid-container">
-            <div class="grid">
-                <div class="faq-card">
-                    <div class="badge">Question</div>
-                    <h1>I need to manage my personal info 😨</h1>
-                    <p>
-                        We use an app called <a href="https://auth.hackclub.com/">Hack Club Auth</a> to store your
-                        personal
-                        info and verify you're a teen. You can upload your id here to participate in any event by
-                        hackclub.
-                    </p>
+            <div class="hero-illustration">
+                <img src="https://assets.hackclub.com/icon-rounded.svg" alt="Hack Club Icon" />
+            </div>
+        </section>
+
+        <section id="events" class="faq-section">
+            <h2 class="section-title title">📅 Support for Hack Club events</h2>
+            <p class="section-desc subtitle">Need help with a specific event or YSWS (You Ship, We Ship) event? Your event may have a help channel available! See the below events for their respective support channel.</p>
+            <div class="event-search-wrap">
+                <label for="event-search" class="event-search-label">Search event support channels</label>
+                <input
+                    id="event-search"
+                    class="event-search-input"
+                    type="search"
+                    placeholder="Try: sprig, hcb, identity"
+                    autocomplete="off"
+                />
+                <p id="event-search-status" class="event-search-status" aria-live="polite">Showing all channels</p>
+            </div>
+
+            <div class="events-grid container wide" id="events-grid"></div>
+        </section>
+
+        <section class="faq-section bg-alt" id="auth">
+            <h2 class="section-title title">🛂 Managing my personal information</h2>
+            <p class="section-desc subtitle">We use an app called Hack Club Auth to store your personal info and verify you're a teen.</p>
+            
+            <div class="faq-grid container wide">
+                <div class="card border-card interactive">
+                    <div class="card-icon">🪪</div>
+                    <h3>Upload my ID</h3>
+                    <p>Use Hack Club Auth to upload your ID to prove you're a teen and participate in Hack Club events.</p>
+                    <a href="https://auth.hackclub.com/verifications/document" class="card-link">➡️ Start identity verification</a>
                 </div>
-                <div class="faq-card">
-                    <div class="badge">Question</div>
-                    <h1>I have a question! Where do i ask it? 🤔</h1>
-                    <p>The website is pretty informative, but if you still have a question related to HC
-                        be sure to ask in the <a href="https://hackclub.enterprise.slack.com/archives/C07TM4C0AQ5">#help</a> channel on slack
-                    </p>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">✏️</div>
+                    <h3>Update my information</h3>
+                    <p>Manage your mailing address, name, and other information we have on file.</p>
+                    <a href="https://auth.hackclub.com/" class="card-link">➡️ Update my info</a>
                 </div>
-                <div class="faq-card">
-                    <div class="badge">Question</div>
-                    <h1>HackClub help.</h1>
-                    <p>A place where you can get answers to your questions about hackclub</p>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">🆘</div>
+                    <h3>Support updating my information or verifying ID</h3>
+                    <p>If you need help updating your information, leave a post on #identity-help.</p>
+                    <a href="https://hackclub.enterprise.slack.com/archives/C092833JXKK" class="card-link">➡️ Contact support for Hack Club Auth</a>
                 </div>
-                <div class="faq-card">
-                    <div class="badge">Question</div>
-                    <h1>HackClub help.</h1>
-                    <p>A place where you can get answers to your questions about hackclub</p>
-                </div>
-                <div class="faq-card">
-                    <div class="badge">Question</div>
-                    <h1>HackClub help.</h1>
-                    <p>A place where you can get answers to your questions about hackclub</p>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">👨‍💻</div>
+                    <h3>Developing with Hack Club Auth</h3>
+                    <p>See documentation for using Hack Club Auth for authentication in your apps.</p>
+                    <a href="https://auth.hackclub.com/docs/welcome" class="card-link">➡️ Developer documentation</a>
                 </div>
             </div>
-        </main>
-    </section>
+        </section>
+
+        <section class="faq-section" id="hcb">
+            <h2 class="section-title title">🏦 Managing fiscal sponsorships using HCB</h2>
+            <p class="section-desc subtitle">HCB is our online banking system for Hack Club fiscal sponsorships, where teen organizations get non-profit status and a platform to move money.</p>
+            
+            <div class="faq-grid container wide">
+                <div class="card border-card interactive">
+                    <div class="card-icon">💻</div>
+                    <h3>Manage my money online</h3>
+                    <p>Use HCB's online platform to manage your fiscal sponsorship, see and move money, send invoices, and add collaborators.</p>
+                    <a href="https://hcb.hackclub.com" class="card-link">➡️ Log in to HCB</a>
+                </div>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">📱</div>
+                    <h3>Use HCB on my mobile device</h3>
+                    <p>HCB Mobile allows you to manage your HCB organizations on the go.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.hackclub.hcb" class="card-link">➡️ Download HCB Mobile for Android</a><br/>
+                    <a href="https://apps.apple.com/us/app/hcb-by-hack-club/id6465424810" class="card-link">➡️ Download HCB Mobile for iOS</a><br/>
+                    <a href="https://hackclub.enterprise.slack.com/archives/C04CW5HNGR5" class="card-link">➡️ Get support for HCB Mobile</a>
+                </div>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">✨</div>
+                    <h3>Apply for a fiscal sponsorship</h3>
+                    <p>HCB provides your organization a 501(c)(3) status and an online platform to manage your money.</p>
+                    <a href="https://hcb.hackclub.com/applications/new" class="card-link">➡️ Start my application</a>
+                </div>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">💰</div>
+                    <h3>Event grants support</h3>
+                    <p>For support about money granted by a Hack Club event, contact the event manager.</p>
+                    <a href="https://hackclub.enterprise.slack.com/docs/T0266FRGM/F0AR3EQK621?focus_section_id=temp:C:UXE23dff5ede49a43e4b8930600b" class="card-link">➡️ See your event's support options</a>
+                </div>
+
+                <div class="card border-card interactive">
+                    <div class="card-icon">🆘</div>
+                    <h3>Support for HCB</h3>
+                    <p>If you need help managing or applying for a fiscal sponsorship, leave a post on the #hcb channel.</p>
+                    <a href="https://hackclub.enterprise.slack.com/archives/CN523HLKW" class="card-link">➡️ Contact support for HCB</a>
+                </div>
+
+                <div class="card border-card card-urgent interactive">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Urgent inquiries about HCB</h3>
+                    <p>If you need urgent or immediate help with your HCB organization, call HCB support at [NUMBER], or email HCB support at hcb@hackclub.com.</p>
+                    <a href="tel:18442372290" class="card-link">➡️ Call HCB support</a><br/>
+                    <a href="mailto:hcb@hackclub.com" class="card-link">➡️ Email HCB support</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section bg-alt" id="general">
+            <div class="general-help-card">
+                <h2 class="title">😕 Confused on where to get support?</h2>
+                <p>Drop a message in <strong>#help</strong>, and we'll guide you to the right place.</p>
+                <div class="mt-4">
+                    <a href="https://hackclub.enterprise.slack.com/archives/C07TM4C0AQ5" class="btn btn-primary">Go to #help channel</a>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- I just stole footer content from the main website 🫡 -->
+    <footer class="footer">
+        <div class="footer-grid container wide">
+            <div class="footer-col">
+                <h4>Hack Club</h4>
+                <a href="https://hackclub.com/philosophy">Philosophy</a>
+                <a href="https://hackclub.com/team">Our Team & Board</a>
+                <a href="https://hackclub.com/jobs">Jobs</a>
+                <a href="https://hackclub.com/brand">Brand Guide</a>
+                <a href="https://hackclub.com/press">Press Inquiries</a>
+                <a href="https://hackclub.com/philanthropy">Donate</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="https://events.hackclub.com">Community Events</a>
+                <a href="https://jams.hackclub.com">Jams</a>
+                <a href="https://toolbox.hackclub.com">Toolbox</a>
+                <a href="https://hackclub.com/map">Clubs Map</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="https://hackclub.com/imprint">Imprint</a>
+                <a href="https://hackclub.com/conduct">Code of Conduct</a>
+                <a href="https://hackclub.com/privacy">Privacy & Terms</a>
+            </div>
+            <div class="footer-col footer-contact">
+                <img src="https://assets.hackclub.com/flag-standalone-wtransparent.svg" alt="Hack Club Flag" class="footer-logo">
+                <p>1-855-625-HACK <br>(call toll-free)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Hack Club. 501(c)(3) nonprofit (EIN: 81-2908499)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
-
 </html>
