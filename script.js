@@ -1,4 +1,55 @@
 (function () {
+    const navbar = document.querySelector('.navbar');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    if (navbar && navToggle) {
+        navToggle.addEventListener('click', function () {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navbar.classList.toggle('menu-open', !expanded);
+        });
+
+        document.addEventListener('click', function (event) {
+            const clickedInsideNav = navbar.contains(event.target);
+            if (!clickedInsideNav && navbar.classList.contains('menu-open')) {
+                navbar.classList.remove('menu-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 900 && navbar.classList.contains('menu-open')) {
+                navbar.classList.remove('menu-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            const targetId = link.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+
+            const target = document.querySelector(targetId);
+            if (!target) return;
+
+            event.preventDefault();
+            const navHeight = navbar ? navbar.offsetHeight : 0;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
+
+            window.scrollTo({
+                top: Math.max(top, 0),
+                behavior: 'smooth'
+            });
+
+            if (navbar && navToggle) {
+                navbar.classList.remove('menu-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
     const searchInput = document.getElementById('event-search');
     const statusText = document.getElementById('event-search-status');
     const eventsGrid = document.getElementById('events-grid');
