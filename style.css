@@ -16,6 +16,12 @@
     scroll-behavior: smooth;
 }
 
+a {
+    color: var(--hc-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
 body {
     background: var(--bg-gradient);
     background-attachment: fixed;
@@ -119,6 +125,7 @@ body {
     background: #ff475d;
 }
 
+
 .grid-container {
     height: 100%;
     width: 100%;
@@ -126,6 +133,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .grid {
@@ -137,36 +145,27 @@ body {
 }
 
 h1 {
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 1.5rem;
+    font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     letter-spacing: -1.5px;
 }
 
 p {
     font-size: 1rem;
     color: var(--text-muted);
-    margin-bottom: 2rem;
-    max-width: 90%;
 }
 
 .faq-card {
     background: var(--black);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 32px;
-    padding: 2rem;
-    text-align: left;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
     position: relative;
+    width: 25vw;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .actions {
-        flex-direction: column;
-    }
 }
