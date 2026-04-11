@@ -3,6 +3,22 @@
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
+    function applyExternalLinkTargets(root) {
+        const container = root || document;
+        const links = container.querySelectorAll('a[href]:not([href^="#"])');
+
+        links.forEach(function (link) {
+            link.setAttribute('target', '_blank');
+
+            const href = link.getAttribute('href') || '';
+            if (/^https?:\/\//i.test(href)) {
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+    }
+
+    applyExternalLinkTargets(document);
+
     if (navbar && navToggle) {
         navToggle.addEventListener('click', function () {
             const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -87,6 +103,7 @@
     }
 
     eventsGrid.innerHTML = events.map(renderEventCard).join('');
+    applyExternalLinkTargets(eventsGrid);
 
     const eventCards = Array.from(eventsGrid.querySelectorAll('.event-card'));
 
