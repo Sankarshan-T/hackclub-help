@@ -1,10 +1,14 @@
 :root {
     --hc-red: #ec3750;
+    --hc-red-hover: #a72637;
     --hc-orange: #ff8c37;
+    --hc-orange-hover: #a65a24;
     --hc-yellow: #f1c40f;
+    --hc-yellow-hover: #967a09;
     --hc-green: #33d6a6;
     --hc-cyan: #5bc0de;
     --hc-blue: #338eda;
+    --hc-blue-hover: #1b4e77;
     --hc-purple: #a633d6;
     --hc-muted: #8492a6;
     --hc-snow: #f9fafc;
@@ -457,13 +461,13 @@ a:hover {
 .card-link {
     display: inline-block;
     font-weight: 700;
-    color: var(--hc-blue);
+    color: var(--hc-red);
     font-size: 1.05rem;
     margin-bottom: 0.5rem;
 }
 
 .card-link:hover {
-    color: var(--hc-red);
+    color: var(--hc-red-hover);
 }
 
 .general-help-card {

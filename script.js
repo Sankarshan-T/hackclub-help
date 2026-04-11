@@ -57,23 +57,23 @@
     if (!searchInput || !statusText || !eventsGrid) return;
 
     const events = [
-        { name: 'Resolution', icon: '🦖', channel: '#resolution-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Sleepover', icon: '⛺', channel: '#athena-sleepover', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Enclosure', icon: '📦', channel: '#enclosure-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Trailit', icon: '🛤️', channel: '#trailit-ysws', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Fallout', icon: '☢️', channel: '#fallout-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Remixed', icon: '📻', channel: '#remixed-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Hackcraft', icon: '⛏️', channel: '#mc-modding', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Stasis', icon: '⏸️', channel: '#stasis-support', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Coeur', icon: '❤️', channel: '#coeur', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Boot', icon: '👢', channel: '#boot', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Hack Club: The Game', icon: '🕹️', channel: '#hctg-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Boba Drops', icon: '🧋', channel: '#boba', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Horizons', icon: '🌅', channel: '#horizons-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Sprig', icon: '🌱', channel: '#sprig', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Construct', icon: '🏗️', channel: '#construct-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Flavortown', icon: '🍔', channel: '#flavortown-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' },
-        { name: 'Campfire Flagship', icon: '🏕️', channel: '#campfire-flagship-help', link: 'https://hackclub.enterprise.slack.com/archives/channelidhere' }
+        { name: 'Resolution', icon: '🦖', channel: '#resolution-help', link: 'https://hackclub.enterprise.slack.com/archives/C0A80KVN6MA' },
+        { name: 'Sleepover', icon: '⛺', channel: '#athena-sleepover', link: 'https://hackclub.enterprise.slack.com/archives/C0A9UNRF96V' },
+        { name: 'Enclosure', icon: '📦', channel: '#enclosure-help', link: 'https://hackclub.enterprise.slack.com/archives/C0AQR65RE02' },
+        { name: 'Trailit', icon: '🛤️', channel: '#trailit-ysws', link: 'https://hackclub.enterprise.slack.com/archives/C0AGG8J6PLL' },
+        { name: 'Fallout', icon: '☢️', channel: '#fallout-help', link: 'https://hackclub.enterprise.slack.com/archives/C0ACJ290090' },
+        { name: 'Remixed', icon: '📻', channel: '#remixed-help', link: 'https://hackclub.enterprise.slack.com/archives/C0AK7L0B9A6' },
+        { name: 'Hackcraft', icon: '⛏️', channel: '#mc-modding', link: 'https://hackclub.enterprise.slack.com/archives/C07NQ5QAYNQ' },
+        { name: 'Stasis', icon: '⏸️', channel: '#stasis-support', link: 'https://hackclub.enterprise.slack.com/archives/C09JP51FHNE' },
+        { name: 'Coeur', icon: '❤️', channel: '#coeur', link: 'https://hackclub.enterprise.slack.com/archives/C0A6MCHFFEU' },
+        { name: 'Boot', icon: '👢', channel: '#boot', link: 'https://hackclub.enterprise.slack.com/archives/C09EWDU9ZQT' },
+        { name: 'Hack Club: The Game', icon: '🕹️', channel: '#hctg-help', link: 'https://hackclub.enterprise.slack.com/archives/C0A9XULS1SL' },
+        { name: 'Boba Drops', icon: '🧋', channel: '#boba', link: 'https://hackclub.enterprise.slack.com/archives/C06UJR8QW0M' },
+        { name: 'Horizons', icon: '🌅', channel: '#horizons-help', link: 'https://hackclub.enterprise.slack.com/archives/C0AFLAUT58A' },
+        { name: 'Sprig', icon: '🌱', channel: '#sprig', link: 'https://hackclub.enterprise.slack.com/archives/C02UN35M7LG' },
+        { name: 'Construct', icon: '🏗️', channel: '#construct-help', link: 'https://hackclub.enterprise.slack.com/archives/C09QSTUV88Y' },
+        { name: 'Flavortown', icon: '🍔', channel: '#flavortown-help', link: 'https://hackclub.enterprise.slack.com/archives/C09MATKQM8C' },
+        { name: 'Campfire Flagship', icon: '🏕️', channel: '#campfire-flagship-help', link: 'https://hackclub.enterprise.slack.com/archives/C0A6KLGRZQE' }
     ];
 
     function renderEventCard(event) {
