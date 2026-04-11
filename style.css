@@ -21,7 +21,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behaviour: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -104,14 +104,15 @@ a:hover {
 }
 
 .main-content {
-    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100vh);
     width: 100%;
 }
 
 .hero {
     max-width: 1200px;
+    height: 100vh;
     margin: 0 auto;
-    padding: 80px 20px 60px;
+    padding: 30px 20px 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -227,6 +228,7 @@ a:hover {
 
 .section-title {
     font-size: 2.25rem;
+    margin-top: 3rem;
     font-weight: 800;
     text-align: center;
     margin-bottom: 1rem;
