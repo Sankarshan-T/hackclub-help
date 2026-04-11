@@ -1,13 +1,13 @@
 <!-- This website is still WIP! -->
 <!-- All the content in this website is from the get support canvas (COMING SOON 👀👀) -->
-<!-- the channel ids are placeholders for now cuz im too lazy to put em up, i'll do it later -->
+<!-- the channel ids are placeholders for now, still need to add em -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help | Hack Club</title>
+    <title>Help – Hack Club</title>
     <meta name="description" content="A place where you can get answers to your questions about Hack Club.">
     <link rel="icon" type="image/svg+xml" href="https://assets.hackclub.com/icon-rounded.svg">
     <link rel="stylesheet" href="https://css.hackclub.com/theme.css">
@@ -17,15 +17,21 @@
 </head>
 <body>
 
-    <a href="https://hackclub.com/" class="hc-flag-link">
-        <img class="hc-flag" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/>
-    </a>
-
-    <!-- Navbar - I still need to add stuff here -->
     <nav class="navbar">
         <div class="nav-container container wide">
-            <div class="nav-links">
-                <!-- navbar things need to added here -->
+            <a href="https://hackclub.com/" class="nav-brand" aria-label="Hack Club homepage">
+                <img class="nav-flag" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <div class="nav-links" id="primary-nav">
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#auth" class="nav-link">Auth</a>
+                <a href="#hcb" class="nav-link">HCB</a>
+                <a href="https://hackclub.enterprise.slack.com/archives/C07TM4C0AQ5" class="nav-cta">Get Help</a>
             </div>
         </div>
     </nav>
