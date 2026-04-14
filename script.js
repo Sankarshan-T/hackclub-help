@@ -1,11 +1,11 @@
 (function () {
-    const navbar = document.querySelector('.navbar');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const navbar = document.querySelector('.nav');
+    const navtoggle = document.querySelector('.toggle');
+    const navlinks = document.querySelectorAll('.links a[href^="#"]');
 
-    function applyExternalLinkTargets(root) {
-        const container = root || document;
-        const links = container.querySelectorAll('a[href]:not([href^="#"])');
+    function openlinksinnewtab(root) {
+        const scope = root || document;
+        const links = scope.querySelectorAll('a[href]:not([href^="#"])');
 
         links.forEach(function (link) {
             link.setAttribute('target', '_blank');
@@ -17,60 +17,60 @@
         });
     }
 
-    applyExternalLinkTargets(document);
+    openlinksinnewtab(document);
 
-    if (navbar && navToggle) {
-        navToggle.addEventListener('click', function () {
-            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', String(!expanded));
-            navbar.classList.toggle('menu-open', !expanded);
+    if (navbar && navtoggle) {
+        navtoggle.addEventListener('click', function () {
+            const isexpanded = navtoggle.getAttribute('aria-expanded') === 'true';
+            navtoggle.setAttribute('aria-expanded', String(!isexpanded));
+            navbar.classList.toggle('menuopen', !isexpanded);
         });
 
         document.addEventListener('click', function (event) {
-            const clickedInsideNav = navbar.contains(event.target);
-            if (!clickedInsideNav && navbar.classList.contains('menu-open')) {
-                navbar.classList.remove('menu-open');
-                navToggle.setAttribute('aria-expanded', 'false');
+            const clickedinsidenav = navbar.contains(event.target);
+            if (!clickedinsidenav && navbar.classList.contains('menuopen')) {
+                navbar.classList.remove('menuopen');
+                navtoggle.setAttribute('aria-expanded', 'false');
             }
         });
 
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 900 && navbar.classList.contains('menu-open')) {
-                navbar.classList.remove('menu-open');
-                navToggle.setAttribute('aria-expanded', 'false');
+            if (window.innerWidth > 900 && navbar.classList.contains('menuopen')) {
+                navbar.classList.remove('menuopen');
+                navtoggle.setAttribute('aria-expanded', 'false');
             }
         });
     }
 
-    navLinks.forEach(function (link) {
+    navlinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
-            const targetId = link.getAttribute('href');
-            if (!targetId || targetId === '#') return;
+            const targetid = link.getAttribute('href');
+            if (!targetid || targetid === '#') return;
 
-            const target = document.querySelector(targetId);
+            const target = document.querySelector(targetid);
             if (!target) return;
 
             event.preventDefault();
-            const navHeight = navbar ? navbar.offsetHeight : 0;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 8;
+            const navheight = navbar ? navbar.offsetHeight : 0;
+            const top = target.getBoundingClientRect().top + window.pageYOffset - navheight - 8;
 
             window.scrollTo({
                 top: Math.max(top, 0),
                 behavior: 'smooth'
             });
 
-            if (navbar && navToggle) {
-                navbar.classList.remove('menu-open');
-                navToggle.setAttribute('aria-expanded', 'false');
+            if (navbar && navtoggle) {
+                navbar.classList.remove('menuopen');
+                navtoggle.setAttribute('aria-expanded', 'false');
             }
         });
     });
 
-    const searchInput = document.getElementById('event-search');
-    const statusText = document.getElementById('event-search-status');
-    const eventsGrid = document.getElementById('events-grid');
+    const searchinput = document.getElementById('eventsearch');
+    const statustext = document.getElementById('eventsearchstatus');
+    const eventsgrid = document.getElementById('eventsgrid');
 
-    if (!searchInput || !statusText || !eventsGrid) return;
+    if (!searchinput || !statustext || !eventsgrid) return;
 
     const events = [
         { name: 'Resolution', channel: '#resolution-help', link: 'https://hackclub.enterprise.slack.com/archives/C0A80KVN6MA' },
@@ -92,54 +92,54 @@
         { name: 'Campfire Flagship', image: 'images/campfire.png', channel: '#campfire-flagship-help', link: 'https://hackclub.enterprise.slack.com/archives/C0A6KLGRZQE' }
     ];
 
-    function renderEventCard(event) {
-        const iconMarkup = event.image
-            ? `<img src="${event.image}" alt="${event.name} logo" class="event-icon-img" loading="lazy" />`
-            : `<span class="event-icon-fallback" aria-hidden="true">${event.name.slice(0, 1)}</span>`;
+    function rendereventcard(event) {
+        const iconmarkup = event.image
+            ? `<img src="${event.image}" alt="${event.name} logo" class="eventimg" loading="lazy" />`
+            : `<span class="eventfallback" aria-hidden="true">${event.name.slice(0, 1)}</span>`;
 
         return `
-            <a href="${event.link}" class="event-card card interactive">
-                <span class="event-icon" aria-hidden="true">${iconMarkup}</span>
+            <a href="${event.link}" class="eventcard card interactive">
+                <span class="eventicon" aria-hidden="true">${iconmarkup}</span>
                 <h3>${event.name}</h3>
-                <div class="event-channel pill">${event.channel}</div>
+                <div class="eventchannel pill">${event.channel}</div>
             </a>
         `;
     }
 
-    eventsGrid.innerHTML = events.map(renderEventCard).join('');
-    applyExternalLinkTargets(eventsGrid);
+    eventsgrid.innerHTML = events.map(rendereventcard).join('');
+    openlinksinnewtab(eventsgrid);
 
-    const eventCards = Array.from(eventsGrid.querySelectorAll('.event-card'));
+    const eventcards = Array.from(eventsgrid.querySelectorAll('.eventcard'));
 
-    const total = eventCards.length;
+    const totalcards = eventcards.length;
 
-    function updateSearch() {
-        const query = searchInput.value.trim().toLowerCase();
-        let visibleCount = 0;
+    function updatesearch() {
+        const query = searchinput.value.trim().toLowerCase();
+        let visiblecount = 0;
 
-        eventCards.forEach((card) => {
-            const eventName = card.querySelector('h3')?.textContent?.toLowerCase() || '';
-            const channelName = card.querySelector('.event-channel')?.textContent?.toLowerCase() || '';
-            const haystack = `${eventName} ${channelName}`;
-            const isMatch = query === '' || haystack.includes(query);
+        eventcards.forEach((card) => {
+            const eventname = card.querySelector('h3')?.textContent?.toLowerCase() || '';
+            const channelname = card.querySelector('.eventchannel')?.textContent?.toLowerCase() || '';
+            const haystack = `${eventname} ${channelname}`;
+            const ismatch = query === '' || haystack.includes(query);
 
-            card.hidden = !isMatch;
-            if (isMatch) visibleCount += 1;
+            card.hidden = !ismatch;
+            if (ismatch) visiblecount += 1;
         });
 
         if (query === '') {
-            statusText.textContent = 'Showing all channels';
+            statustext.textContent = 'Showing all channels';
             return;
         }
 
-        if (visibleCount === 0) {
-            statusText.textContent = `No channels found for "${query}"`;
+        if (visiblecount === 0) {
+            statustext.textContent = `No channels found for "${query}"`;
             return;
         }
 
-        statusText.textContent = `Showing ${visibleCount} of ${total} channels`;
+        statustext.textContent = `Showing ${visiblecount} of ${totalcards} channels`;
     }
 
-    searchInput.addEventListener('input', updateSearch);
-    updateSearch();
+    searchinput.addEventListener('input', updatesearch);
+    updatesearch();
 })();
