@@ -476,6 +476,11 @@ a:hover {
     display: block;
 }
 
+.emoji-help {
+    width: 2rem;
+    height: 2rem;
+}
+
 .emoji {
     font-size: 2rem;
     line-height: 1;
