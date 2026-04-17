@@ -12,6 +12,18 @@
     --navheight: 80px;
 }
 
+body.dark-theme {
+    --red: #ff4d67;
+    --reddark: #ec3750;
+    --blue: #51a2e8;
+    --bg: #17171d;
+    --inkdark: #000000;
+    --text: #f9fafc;
+    --line: #2d3748;
+    --ink: #ffffff;
+    --white: #1f2d3d;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -608,6 +620,67 @@ a:hover {
     max-width: 28rem;
     font-size: 1.15rem;
     color: var(--muted);
+}
+
+body.dark-theme .nav {
+    background-color: rgba(23, 23, 29, 0.85);
+}
+
+body.dark-theme .alt {
+    background-color: #1f2d3d;
+}
+
+body.dark-theme .eventicon,
+body.dark-theme .icon {
+    background: #1f2d3d;
+    border-color: #2d3748;
+}
+
+body.dark-theme .urgent {
+    background-color: #2a1f1a;
+}
+
+body.dark-theme .nav .toggle > .togglebar {
+    background: var(--text) !important;
+}
+
+body.dark-theme .link:hover {
+    background: rgba(255, 77, 103, 0.15);
+}
+
+body.dark-theme .eventcard:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .links {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark-theme .footer {
+    background-color: #000000;
+}
+
+body.dark-theme .footerbottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .footercol h4 {
+    color: var(--text);
+}
+
+body.dark-theme .contact p {
+    color: var(--muted);
+}
+
+body.dark-theme .footercol a {
+    color: var(--text);
+    opacity: 0.9;
+}
+
+body.dark-theme .footercol a:hover {
+    color: var(--red);
+    opacity: 1;
 }
 
 @keyframes errorspin {

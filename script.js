@@ -113,6 +113,28 @@
 
     const totalcards = eventcards.length;
 
+    const btn = document.getElementById("theme-toggle");
+    const currentTheme = localStorage.getItem("theme");
+
+    if (currentTheme === "dark") {
+        document.body.classList.add("dark-theme");
+    }
+
+    btn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-theme");
+
+        let theme = "light";
+        if (document.body.classList.contains("dark-theme")) {
+            theme = "dark";
+            btn.innerHTML = "☀️"
+        } else {
+            btn.innerHTML = "🌙"
+        }
+        localStorage.setItem("theme", theme);
+    });
+
+
+
     function updatesearch() {
         const query = searchinput.value.trim().toLowerCase();
         let visiblecount = 0;
