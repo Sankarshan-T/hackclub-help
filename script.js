@@ -74,6 +74,7 @@
 
     const events = [
         { name: 'Resolution', channel: '#resolution-help', link: 'https://hackclub.enterprise.slack.com/archives/C0A80KVN6MA' },
+        { name: 'Rasapi', image: 'images/rasapi.png', channel: '#rasapi', link: 'https://hackclub.enterprise.slack.com/archives/C07UZSKJQRX' },
         { name: 'Sleepover', image: 'images/sleepover.png', channel: '#athena-sleepover', link: 'https://hackclub.enterprise.slack.com/archives/C0A9UNRF96V' },
         { name: 'Enclosure', image: 'images/enclosure.png', channel: '#enclosure-help', link: 'https://hackclub.enterprise.slack.com/archives/C0AQR65RE02' },
         { name: 'Trailit', image: 'images/trailit.png', channel: '#trailit-ysws', link: 'https://hackclub.enterprise.slack.com/archives/C0AGG8J6PLL' },
