@@ -1,6 +1,7 @@
 (function () {
     const navbar = document.querySelector('.nav');
     const navtoggle = document.querySelector('.toggle');
+    const themetoggle = document.querySelector('.themetoggle');
     const navlinks = document.querySelectorAll('.links a[href^="#"]');
 
     function openlinksinnewtab(root) {
@@ -18,6 +19,31 @@
     }
 
     openlinksinnewtab(document);
+
+    function updatethemetogglebutton() {
+        if (!themetoggle) return;
+
+        const isdarktheme = document.body.classList.contains('dark-theme');
+        themetoggle.textContent = isdarktheme ? '☀️' : '🌙';
+        themetoggle.setAttribute('aria-label', isdarktheme ? 'Switch to light mode' : 'Switch to dark mode');
+        themetoggle.setAttribute('title', isdarktheme ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    const savedtheme = localStorage.getItem('theme');
+    if (savedtheme === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+
+    updatethemetogglebutton();
+
+    if (themetoggle) {
+        themetoggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-theme');
+            const active_theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', active_theme);
+            updatethemetogglebutton();
+        });
+    }
 
     if (navbar && navtoggle) {
         navtoggle.addEventListener('click', function () {
@@ -113,28 +139,6 @@
     const eventcards = Array.from(eventsgrid.querySelectorAll('.eventcard'));
 
     const totalcards = eventcards.length;
-
-    const btn = document.getElementById("theme-toggle");
-    const currentTheme = localStorage.getItem("theme");
-
-    if (currentTheme === "dark") {
-        document.body.classList.add("dark-theme");
-    }
-
-    btn.addEventListener("click", function () {
-        document.body.classList.toggle("dark-theme");
-
-        let theme = "light";
-        if (document.body.classList.contains("dark-theme")) {
-            theme = "dark";
-            btn.innerHTML = "☀️"
-        } else {
-            btn.innerHTML = "🌙"
-        }
-        localStorage.setItem("theme", theme);
-    });
-
-
 
     function updatesearch() {
         const query = searchinput.value.trim().toLowerCase();

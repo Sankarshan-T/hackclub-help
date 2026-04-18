@@ -4,6 +4,9 @@
     --blue: #338eda;
     --muted: #8492a6;
     --bg: #f9fafc;
+    --surface: #ffffff;
+    --altbg: #f1f5f9;
+    --navbg: rgba(249, 250, 252, 0.85);
     --inkdark: #17171d;
     --text: #1f2d3d;
     --line: #e0e6ed;
@@ -17,11 +20,14 @@ body.dark-theme {
     --reddark: #ec3750;
     --blue: #51a2e8;
     --bg: #17171d;
+    --surface: #1f2d3d;
+    --altbg: #1b2636;
+    --navbg: rgba(23, 23, 29, 0.85);
     --inkdark: #000000;
     --text: #f9fafc;
     --line: #2d3748;
     --ink: #ffffff;
-    --white: #1f2d3d;
+    --white: #ffffff;
 }
 
 * {
@@ -58,7 +64,7 @@ a:hover {
 }
 
 .nav {
-    background-color: rgba(249, 250, 252, 0.85);
+    background-color: var(--navbg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
@@ -163,6 +169,43 @@ a:hover {
     color: var(--white);
     background: #d7263d;
     text-decoration: none;
+}
+
+.links .cta {
+    background: var(--red);
+    color: var(--white);
+}
+
+.links .cta:hover {
+    background: #d7263d;
+    color: var(--white);
+}
+
+.themetoggle {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.themetoggle:hover {
+    transform: translateY(-1px);
+    border-color: rgba(236, 55, 80, 0.5);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.themetoggle:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
 }
 
 .maincontent {
@@ -280,7 +323,7 @@ a:hover {
 }
 
 .alt {
-    background-color: #f1f5f9;
+    background-color: var(--altbg);
 }
 
 .sectiontitle {
@@ -349,7 +392,7 @@ a:hover {
     padding: 0.85rem 1rem;
     font-size: 1rem;
     color: var(--text);
-    background: var(--white);
+    background: var(--surface);
     transition: border-color 0.18s ease, box-shadow 0.26s ease;
 }
 
@@ -366,7 +409,7 @@ a:hover {
 }
 
 .eventcard {
-    background: var(--white);
+    background: var(--surface);
     border-radius: 16px;
     padding: 20px;
     border: 1px solid var(--line);
@@ -442,14 +485,20 @@ a:hover {
 }
 
 .card {
-    background: var(--white);
+    background: var(--surface);
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     border: 1px solid var(--line);
-    transition: transform 0.15s, box-shadow 0.25s;
+    transition: transform 0.15s, box-shadow 0.25s, border-color 0.2s;
     display: flex;
     flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(236, 55, 80, 0.3);
 }
 
 .bordered {
@@ -458,7 +507,7 @@ a:hover {
 }
 
 .bordered:hover {
-    border-color: var(--line);
+    border-color: rgba(236, 55, 80, 0.3);
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
 }
@@ -529,12 +578,18 @@ a:hover {
 .helpcard {
     max-width: 800px;
     margin: 0 auto;
-    background: var(--white);
+    background: var(--surface);
     border-radius: 24px;
     padding: 40px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     border: 1px solid var(--line);
+    transition: transform 0.15s, box-shadow 0.25s;
+}
+
+.helpcard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .helpcard h2 {
@@ -623,11 +678,11 @@ a:hover {
 }
 
 body.dark-theme .nav {
-    background-color: rgba(23, 23, 29, 0.85);
+    background-color: var(--navbg);
 }
 
 body.dark-theme .alt {
-    background-color: #1f2d3d;
+    background-color: var(--altbg);
 }
 
 body.dark-theme .eventicon,
@@ -650,6 +705,12 @@ body.dark-theme .link:hover {
 
 body.dark-theme .eventcard:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .card:hover,
+body.dark-theme .helpcard:hover,
+body.dark-theme .bordered:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
 body.dark-theme .links {
@@ -815,7 +876,7 @@ body.dark-theme .footercol a:hover {
         justify-content: center;
         align-items: center;
         gap: 5px;
-        background: transparent;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 8px;
     }
@@ -823,7 +884,7 @@ body.dark-theme .footercol a:hover {
     .toggle > .togglebar {
         display: block !important;
         width: 20px;
-        background: var(--inkdark) !important;
+        background: var(--ink) !important;
     }
 
     .links {
@@ -837,7 +898,7 @@ body.dark-theme .footercol a:hover {
         top: calc(100% + 8px);
         left: 12px;
         right: 12px;
-        background: var(--white);
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 14px;
         box-shadow: 0 12px 30px rgba(23, 23, 29, 0.15);
@@ -856,7 +917,7 @@ body.dark-theme .footercol a:hover {
 
     .link {
         border: 1px solid rgba(132, 146, 166, 0.2);
-        background: var(--white);
+        background: var(--surface);
         border-radius: 10px;
     }
 
@@ -865,6 +926,16 @@ body.dark-theme .footercol a:hover {
         margin-top: 0.15rem;
         border-radius: 10px;
         width: 100%;
+        background: var(--red);
+        color: var(--white);
+        border: 1px solid rgba(236, 55, 80, 0.35);
+        box-shadow: 0 8px 20px rgba(236, 55, 80, 0.28);
+    }
+
+    .themetoggle {
+        width: 100%;
+        height: 2.6rem;
+        border-radius: 10px;
     }
 
     .hero {
@@ -936,6 +1007,29 @@ body.dark-theme .footercol a:hover {
     .footergrid {
         grid-template-columns: 1fr 1fr;
         gap: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    body.dark-theme .links {
+        background: #141b29;
+        border-color: #2a3f52;
+    }
+
+    body.dark-theme .link {
+        background: #101726;
+        border-color: #2a3f52;
+        color: var(--text);
+    }
+
+    body.dark-theme .toggle {
+        background: #101726;
+        border-color: #2a3f52;
+    }
+
+    body.dark-theme .cta {
+        border-color: rgba(236, 55, 80, 0.6);
+        box-shadow: 0 10px 24px rgba(236, 55, 80, 0.2);
     }
 }
 
